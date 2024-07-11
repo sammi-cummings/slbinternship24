@@ -9,6 +9,7 @@
     "Product_Code": "PAYS",
     "CurrentAcademicYear": 2023
   },
+
   {
     "Customer_TRN": "117324779",
     "RegistrationNo": "SLB-RLOS-131580",
@@ -19,6 +20,7 @@
     "Product_Code": "PAYS",
     "CurrentAcademicYear": 2023
   },
+
   {
     "Customer_TRN": "110732120",
     "RegistrationNo": "SLB-RLOS-129449",
@@ -29,6 +31,7 @@
     "Product_Code": "POSTGRAD",
     "CurrentAcademicYear": 2023
   },
+
   {
     "Customer_TRN": "100291708",
     "RegistrationNo": "SLB-RLOS-123385",
@@ -39,6 +42,7 @@
     "Product_Code": "",
     "CurrentAcademicYear": 2023
   },
+
   {
     "Customer_TRN": "101053070",
     "RegistrationNo": "SLB-RLOS-131776",
@@ -49,6 +53,7 @@
     "Product_Code": "",
     "CurrentAcademicYear": 2023
   },
+
   {
     "Customer_TRN": "117324779",
     "RegistrationNo": "SLB-RLOS-131580",
@@ -59,6 +64,7 @@
     "Product_Code": "",
     "CurrentAcademicYear": 2023
   },
+  
   {
     "Customer_TRN": "110732120",
     "RegistrationNo": "SLB-RLOS-129449",
