@@ -2,77 +2,91 @@
   {
     "Customer_TRN": "101053070",
     "RegistrationNo": "SLB-RLOS-131776",
-    "Registered":"Y",
+    "Registered": "Y",
     "SemesterCost": 204653.13,
     "Semester": 1,
     "GPA": 2.06,
     "Product_Code": "PAYS",
     "CurrentAcademicYear": 2023
   },
-
   {
     "Customer_TRN": "117324779",
     "RegistrationNo": "SLB-RLOS-131580",
-    "Registered":"Y",
+    "Registered": "Y",
     "SemesterCost": 170093.73,
     "Semester": 1,
     "GPA": 3.84,
     "Product_Code": "PAYS",
     "CurrentAcademicYear": 2023
   },
-
   {
     "Customer_TRN": "110732120",
     "RegistrationNo": "SLB-RLOS-129449",
-    "Registered":"Y",
+    "Registered": "Y",
     "SemesterCost": 217571.16,
     "Semester": 1,
     "GPA": 3.58,
     "Product_Code": "POSTGRAD",
     "CurrentAcademicYear": 2023
   },
-
   {
     "Customer_TRN": "100291708",
     "RegistrationNo": "SLB-RLOS-123385",
-    "Registered":"Y",
+    "Registered": "Y",
     "SemesterCost:": 181946.18,
     "Semester": 1,
     "GPA": 3.79,
     "Product_Code": "",
     "CurrentAcademicYear": 2023
   },
-
   {
     "Customer_TRN": "101053070",
     "RegistrationNo": "SLB-RLOS-131776",
-    "Registered":"Y",
+    "Registered": "Y",
     "SemesterCost": 30918.62,
     "Semester": 2,
-    "GPA": 0.00,
+    "GPA": 0,
     "Product_Code": "",
     "CurrentAcademicYear": 2023
   },
-
   {
     "Customer_TRN": "117324779",
     "RegistrationNo": "SLB-RLOS-131580",
-    "Registered":"Y",
+    "Registered": "Y",
     "SemesterCost": 105062.45,
     "Semester": 2,
-    "GPA": 0.00,
+    "GPA": 0,
     "Product_Code": "",
     "CurrentAcademicYear": 2023
   },
-  
   {
     "Customer_TRN": "110732120",
     "RegistrationNo": "SLB-RLOS-129449",
-    "Registered":"Y",
+    "Registered": "Y",
     "SemesterCost": 516608.68,
     "Semester": 2,
-    "GPA": 0.00,
+    "GPA": 0,
     "Product_Code": "",
+    "CurrentAcademicYear": 2023
+  },
+  {
+    "Customer_TRN": "101064070",
+    "RegistrationNo": "SLB-RLOS-1317096",
+    "Registered": "Y",
+    "SemesterCost": 219653.13,
+    "Semester": 1,
+    "GPA": 2.06,
+    "Product_Code": "PAYS",
+    "CurrentAcademicYear": 2023
+  },
+  {
+    "Customer_TRN": "101064070",
+    "RegistrationNo": "SLB-RLOS-1317096",
+    "Registered": "Y",
+    "SemesterCost": 219653.13,
+    "Semester": 1,
+    "GPA": 2.06,
+    "Product_Code": "PAYS",
     "CurrentAcademicYear": 2023
   }
 ]
