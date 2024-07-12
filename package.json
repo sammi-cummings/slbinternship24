@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sammi-cummngs/slbinternship24#readme",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "json2xls": "^0.1.2"
   }
 }
