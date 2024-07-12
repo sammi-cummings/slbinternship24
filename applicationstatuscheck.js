@@ -63,17 +63,17 @@ applicationstatuscheck.post('/add-data', async (req, res) => {
             writeJsonData(jsonData);
             
             // Open existing Excel file
-            const wkbk = new ExcelJS.Workbook();
-            await wkbk.xlsx.readFile(excelFile);
-            const wksht = wkbk.getWorksheet(1); //Using current worksheet
+            const workbook = new ExcelJS.Workbook();
+            await workbook.xlsx.readFile(excelFile);
+            const worksheet = workbook.getWorksheet(1); //Using current worksheet
             
             // Adding new row/s to Excel worksheet
             newdata.forEach(info => {
-            wksht.addRow(info);
+            worksheet.addRow(info);
             });
 
             // Save the Excel file
-            await wkbk.xlsx.writeFile(excelFile);
+            await workbook.xlsx.writeFile(excelFile);
 
              res.status(200).send('Data added successfully to the worksheet');
     
@@ -84,6 +84,42 @@ applicationstatuscheck.post('/add-data', async (req, res) => {
 
     } catch(posterr){
     console.error(posterr);
-    res.status(404).send('Not Found')
+    res.status(404).send('Not Found');
    }
 });
+
+
+//API Route to update a current data in Excel Workbook
+applicationstatuscheck.put('/update-data', async(req,res) => {
+    try{
+        const updatedata = req.body; //Expecting array of objects
+        if (!updatedata || !Array.isArray(updatedata)){
+            return res.status(400).send('Invalid format. Data should be in an array of objects.');
+        }
+        try{
+        
+            //Read existing JSON File
+        const jsonData = readJsonData();
+
+         // Open existing Excel file
+         const workbook = new ExcelJS.Workbook();
+         await workbook.xlsx.readFile(excelFile);
+         const worksheet = workbook.getWorksheet(1); //Using current worksheet
+
+
+        }catch(excelupderr){
+
+        }
+    }catch(puterr){
+        console.error(puterr);
+        res.status(404).send('Not Found');
+    }
+
+})
+
+//API Route to delete current data in Excel Workbook
+applicationstatuscheck.delete('/delete-data', async(req,res)=>{
+    try{
+        const filters = req.body;
+    }catch(err){}
+})

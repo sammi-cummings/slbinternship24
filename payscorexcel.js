@@ -16,6 +16,7 @@ payscorexcel.listen(PORT, () => {
 
 
                     //Functions to read and write JSON Data - NCU-PAYS-COR-JUNE 19 2024.json
+
 //Function to read JSON File
 const readJsonData = () => {
     if (fs.existsSync(jsonFile)) {
@@ -48,11 +49,11 @@ payscorexcel.get('/all-data', async(req,res) =>{
 });
 
 //API route to add data to Excel Workbook
-payscorexcel.post('/add-data', async (req, res) => {
+payscorexcel.post('/add-data', async(req, res) => {
      
     try{
         const newdata = req.body;
-        if (!newdata || !Array.isArray(newdata)) {
+        if (!newdata || !Array.isArray(newdata)){
             return res.status(400).send('Invalid format. Data should be in an array of objects.');
         }
         
@@ -67,25 +68,27 @@ payscorexcel.post('/add-data', async (req, res) => {
             // Open existing Excel file
             const wkbk = new ExcelJS.Workbook();
             await wkbk.xlsx.readFile(excelFile);
-            const wksht = wkbk.getWorksheet(1); //Using current worksheet
+            console.log('Reading from file: ${excelFile}');
+            const wksht = wkbk.getWorksheet('PAYS MAY 30 2024 (2)'); //Using current worksheet
             
             // Adding new row/s to Excel worksheet
-            newdata.forEach(info => {
+            newdata.forEach(info =>{
             wksht.addRow(info);
             });
 
             // Save the Excel file
             await wkbk.xlsx.writeFile(excelFile);
 
-             res.status(200).send('Data added successfully to the worksheet');
+
+            res.status(200).send('Data added successfully to the worksheet');
     
-        }catch (excelerr) {
-        console.error(excelerr);
-        res.status(500).send('Data not added to the worksheet. Try again');
+        }catch (excelerr){
+            console.error(excelerr);
+            res.status(500).send('Data not added to the worksheet. Try again');
         }
 
     } catch(posterr){
-    console.error(posterr);
-    res.status(404).send('Not Found')
-   }
+        console.error(posterr);
+        res.status(404).send('Not Found')
+    }
 });
