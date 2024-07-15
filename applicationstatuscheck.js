@@ -6,6 +6,7 @@ const path =  require('path');
 const PORT = 5672;
 const excelFile = path.join(__dirname, 'Manal COR and GPA for Applications that are stuck at - Application Status Check and Confirm_ATI_Registration Work Step - May 24, 2024.xlsx');
 const jsonFile  = path.join(__dirname, 'applicationstatuscheck.json');
+const workbook = new ExcelJS.Workbook();
 
 applicationstatuscheck.use(express.json());
 
@@ -63,7 +64,6 @@ applicationstatuscheck.post('/add-data', async (req, res) => {
             writeJsonData(jsonData);
             
             // Open existing Excel file
-            const workbook = new ExcelJS.Workbook();
             await workbook.xlsx.readFile(excelFile);
             const worksheet = workbook.getWorksheet(1); //Using current worksheet
             
