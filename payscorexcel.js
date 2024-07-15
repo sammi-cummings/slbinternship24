@@ -2,10 +2,12 @@ const express = require('express');
 const payscorexcel = express();
 const fs = require('fs');
 const ExcelJS = require('exceljs');
+const json2xls = require('json2xls');
 const path =  require('path');
 const PORT = 3080;
-const excelFile = path.join(__dirname, 'NCU-PAYS-COR-JUNE 19 2024 (003).xlsx');
+const excelFile = path.join(__dirname, 'NCU-PAYS-COR-JUNE 19 2024 (003).xlsx'); 
 const jsonFile  = path.join(__dirname, 'NCU-PAYS-COR-JUNE 19 2024.json');
+const wkbk = new ExcelJS.Workbook();
 
 payscorexcel.use(express.json());
 
@@ -66,20 +68,19 @@ payscorexcel.post('/add-data', async(req, res) => {
             writeJsonData(jsonData);
             
             // Open existing Excel file
-            const wkbk = new ExcelJS.Workbook();
             await wkbk.xlsx.readFile(excelFile);
-            console.log('Reading from file: ${excelFile}');
-            const wksht = wkbk.getWorksheet('PAYS MAY 30 2024 (2)'); //Using current worksheet
             
-            // Adding new row/s to Excel worksheet
-            newdata.forEach(info =>{
-            wksht.addRow(info);
-            });
+            const wksht = wkbk.worksheets[0];
+           
+            if(wksht.rowCount === 0 && newdata.length > 0){
+                wksht.columns = Object.keys(newdata[0]).map(key =>({header: key, key}));
+            }
 
-            // Save the Excel file
+            wksht.addRows(newdata);
+            
             await wkbk.xlsx.writeFile(excelFile);
-
-
+            
+            
             res.status(200).send('Data added successfully to the worksheet');
     
         }catch (excelerr){
@@ -92,3 +93,4 @@ payscorexcel.post('/add-data', async(req, res) => {
         res.status(404).send('Not Found')
     }
 });
+
