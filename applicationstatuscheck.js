@@ -1,12 +1,13 @@
 const express = require('express');
 const applicationstatuscheck = express();
 const fs = require('fs');
-const ExcelJS = require('exceljs');
+//const ExcelJS = require('exceljs');
+const xlsx = require('xlsx')
 const path =  require('path');
 const PORT = 5672;
 const excelFile = path.join(__dirname, 'Manal COR and GPA for Applications that are stuck at - Application Status Check and Confirm_ATI_Registration Work Step - May 24, 2024.xlsx');
 const jsonFile  = path.join(__dirname, 'applicationstatuscheck.json');
-const workbook = new ExcelJS.Workbook();
+
 
 applicationstatuscheck.use(express.json());
 
@@ -48,7 +49,7 @@ applicationstatuscheck.get('/all-data', async(req,res) =>{
 
 
 //API route to add data to Excel Workbook
-applicationstatuscheck.post('/add-data', async (req, res) => {
+applicationstatuscheck.post('/add-data', (req, res) => {
     try{
         const newdata = req.body; //Expecting an array of objects
         if (!newdata || !Array.isArray(newdata)) {
@@ -64,16 +65,22 @@ applicationstatuscheck.post('/add-data', async (req, res) => {
             writeJsonData(jsonData);
             
             // Open existing Excel file
-            await workbook.xlsx.readFile(excelFile);
-            const worksheet = workbook.getWorksheet(1); //Using current worksheet
+            const workbook = xlsx.readFile('Manal COR and GPA for Applications that are stuck at - Application Status Check and Confirm_ATI_Registration Work Step - May 24, 2024.xlsx');
+            sheet1 = workbook.Sheets["Application Status Check"]
+            sheet1.push(newdata);
+            xlsx.utils.sheet_add_json(workbook.Sheets[sheet1], sheet1)
+            xlsx.writeFile(workbook, 'Manal COR and GPA for Applications that are stuck at - Application Status Check and Confirm_ATI_Registration Work Step - May 24, 2024.xlsx');
+
+
+            //const worksheet = workbook.getWorksheet(1); //Using current worksheet
             
             // Adding new row/s to Excel worksheet
-            newdata.forEach(info => {
-            worksheet.addRow(info);
-            });
+           // newdata.forEach(info => {
+           // worksheet.addRow(info);
+            //});
 
             // Save the Excel file
-            await workbook.xlsx.writeFile(excelFile);
+            //await workbook.xlsx.writeFile(excelFile);
 
              res.status(200).send('Data added successfully to the worksheet');
     

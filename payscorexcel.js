@@ -1,13 +1,12 @@
 const express = require('express');
 const payscorexcel = express();
 const fs = require('fs');
-const ExcelJS = require('exceljs');
-const json2xls = require('json2xls');
+const xlsx = require('xlsx');
+//const exceljs = require('exceljs');
 const path =  require('path');
 const PORT = 3080;
 const excelFile = path.join(__dirname, 'NCU-PAYS-COR-JUNE 19 2024 (003).xlsx'); 
 const jsonFile  = path.join(__dirname, 'NCU-PAYS-COR-JUNE 19 2024.json');
-const wkbk = new ExcelJS.Workbook();
 
 payscorexcel.use(express.json());
 
@@ -54,8 +53,8 @@ payscorexcel.get('/all-data', async(req,res) =>{
 payscorexcel.post('/add-data', async(req, res) => {
      
     try{
-        const newdata = req.body;
-        if (!newdata || !Array.isArray(newdata)){
+        const jsonnewdata = req.body;
+        if (!jsonnewdata || !Array.isArray(jsonnewdata)){
             return res.status(400).send('Invalid format. Data should be in an array of objects.');
         }
         
@@ -64,19 +63,18 @@ payscorexcel.post('/add-data', async(req, res) => {
             const jsonData = readJsonData();
             
             // Add new data to JSON
-            jsonData.push(...newdata);
+            jsonData.push(...jsonnewdata);
             writeJsonData(jsonData);
             
             // Open existing Excel file
+            const wkbk = xlsx.readFile(excelFile);
             await wkbk.xlsx.readFile(excelFile);
+            const wksht = wkbk.getWorksheet('PAYS MAY 30 2024 (2)');
             
-            const wksht = wkbk.worksheets[0];
-           
-            if(wksht.rowCount === 0 && newdata.length > 0){
-                wksht.columns = Object.keys(newdata[0]).map(key =>({header: key, key}));
-            }
-
-            wksht.addRows(newdata);
+            jsonnewdata.forEach(info => {
+                wksht.addRow(info);
+            });
+              
             
             await wkbk.xlsx.writeFile(excelFile);
             
@@ -93,4 +91,11 @@ payscorexcel.post('/add-data', async(req, res) => {
         res.status(404).send('Not Found')
     }
 });
+
+//payscorexcel.delete('/delete-data', async(req,res)=>{
+
+    //try{
+       // const deletedata = req.body;
+    //}
+//})
 
