@@ -1,11 +1,11 @@
-const express = require('express');
-const payscorexcel = express();
-const fs = require('fs');
-const xlsx = require('xlsx');
-const path =  require('path');
-const PORT = 3080;
-const excelFile = xlsx.readFile('NCU-PAYS-COR-JUNE 19 2024 (003).xlsx'); 
-const jsonFile  = path.join(__dirname, 'NCU-PAYS-COR-JUNE 19 2024.json');
+var express = require('express');
+var payscorexcel = express();
+var fs = require('fs');
+var xlsx = require('xlsx');
+var path =  require('path');
+var PORT = 3080;
+var excelFile = xlsx.readFile('NCU-PAYS-COR-JUNE 19 2024 (003).xlsx'); 
+var jsonFile  = path.join(__dirname, 'NCU-PAYS-COR-JUNE 19 2024.json');
 
 payscorexcel.use(express.json());
 
@@ -65,9 +65,8 @@ payscorexcel.post('/add-data', (req, res) => {
             jsonData.push(...newdata);
             writeJsonData(jsonData);
             
-            // Adding data to existing file
-            var excelsheet = xlsx.utils.sheet_to_json(excelFile.Sheets['PAYS MAY 30 2024 (2)'])
-            xlsx.utils.sheet_add_json(excelsheet, newdata)
+            // Adding data to existing Excel File
+            xlsx.utils.sheet_add_json(excelFile.Sheets['PAYS MAY 30 2024 (2)'], newdata, {origin: -1, skipHeader: true})
             xlsx.writeFile(excelFile, 'NCU-PAYS-COR-JUNE 19 2024 (003).xlsx' )
             
             
@@ -84,4 +83,4 @@ payscorexcel.post('/add-data', (req, res) => {
     }
 });
   
-
+payscoreexcel.put('/update-data', (req,res) => {})
