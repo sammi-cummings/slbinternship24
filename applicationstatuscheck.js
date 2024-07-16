@@ -1,24 +1,24 @@
-const express = require('express');
-const applicationstatuscheck = express();
-const fs = require('fs');
-//const ExcelJS = require('exceljs');
-const xlsx = require('xlsx')
-const path =  require('path');
-const PORT = 5672;
-const excelFile = path.join(__dirname, 'Manal COR and GPA for Applications that are stuck at - Application Status Check and Confirm_ATI_Registration Work Step - May 24, 2024.xlsx');
-const jsonFile  = path.join(__dirname, 'applicationstatuscheck.json');
-
+var express = require('express')
+var applicationstatuscheck = express()
+var fs = require('fs')
+var path = require('path')
+var xlsx = require('xlsx')
+var PORT = 5672;
+var excelFile = xlsx.readFile('Manal COR and GPA for Applications that are stuck at - Application Status Check and Confirm_ATI_Registration Work Step - May 24, 2024.xlsx')
+var wksht = excelFile.Sheets['Application Status Check']
+var jsonFile = path.join(__dirname, 'applicationstatuscheck.json')
 
 applicationstatuscheck.use(express.json());
 
-//Endpoint for port 5672
+//API Route for port 5672
 applicationstatuscheck.listen(PORT, () => {
     console.log("Server Listening on PORT: ", PORT);
 });
 
-                     //Functions to read and write JSON Data - applicationstatuscheck.json
+                          //Functions to read and write JSON Data
+
 //Function to read JSON File
-const readJsonData = () => {
+var readJsonData = () => {
     if (fs.existsSync(jsonFile)) {
         const data = fs.readFileSync(jsonFile);
         return JSON.parse(data);
@@ -26,15 +26,16 @@ const readJsonData = () => {
     return [];
 };
 
-//Function to write JSON data
-const writeJsonData = (data) => {
+//Function to add JSON data to JSON file
+var writeJsonData = (data) => {
     fs.writeFileSync(jsonFile, JSON.stringify(data, null, 2));
 };
 
+
 //API route to retrieve the data from JSON File
 applicationstatuscheck.get('/all-data', async(req,res) =>{
-    try{
-        fs.readFile(jsonFile,  function(errJsonfile, datapayscor){
+    try{ 
+        fs.readFile(jsonFile, function(errJsonfile, datapayscor){
             console.log(datapayscor);
             res.send(datapayscor);
             if(errJsonfile){
@@ -65,7 +66,7 @@ applicationstatuscheck.post('/add-data', (req, res) => {
             writeJsonData(jsonData);
             
             // Open existing Excel file
-            const workbook = xlsx.readFile('Manal COR and GPA for Applications that are stuck at - Application Status Check and Confirm_ATI_Registration Work Step - May 24, 2024.xlsx');
+            
             sheet1 = workbook.Sheets["Application Status Check"]
             sheet1.push(newdata);
             xlsx.utils.sheet_add_json(workbook.Sheets[sheet1], sheet1)
