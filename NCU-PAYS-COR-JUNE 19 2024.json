@@ -1,6 +1,6 @@
 [
   {
-    "Customer_TRN": "101053070",
+    "Customer_TRN": 101053070,
     "RegistrationNo": "SLB-RLOS-131776",
     "Registered": "YES",
     "SemesterCost": 204653.13,
@@ -10,7 +10,7 @@
     "CurrentAcademicYear": 2023
   },
   {
-    "Customer_TRN": "117324779",
+    "Customer_TRN": 117324779,
     "RegistrationNo": "SLB-RLOS-131580",
     "Registered": "YES",
     "SemesterCost": 170093.73,
@@ -20,7 +20,7 @@
     "CurrentAcademicYear": 2023
   },
   {
-    "Customer_TRN": "110732120",
+    "Customer_TRN": 110732120,
     "RegistrationNo": "SLB-RLOS-129449",
     "Registered": "YES",
     "SemesterCost": 217571.16,
@@ -30,7 +30,7 @@
     "CurrentAcademicYear": 2023
   },
   {
-    "Customer_TRN": "100291708",
+    "Customer_TRN": 100291708,
     "RegistrationNo": "SLB-RLOS-123385",
     "Registered": "YES",
     "SemesterCost:": 181946.18,
@@ -40,7 +40,7 @@
     "CurrentAcademicYear": 2023
   },
   {
-    "Customer_TRN": "101053070",
+    "Customer_TRN": 101053070,
     "RegistrationNo": "SLB-RLOS-131776",
     "Registered": "YES",
     "Semester Cost": 30918.62,
@@ -50,7 +50,7 @@
     "CurrentAcademicYear": 2023
   },
   {
-    "Customer_TRN": "117324779",
+    "Customer_TRN": 117324779,
     "RegistrationNo": "SLB-RLOS-131580",
     "Registered": "YES",
     "SemesterCost": 105062.45,
@@ -60,7 +60,7 @@
     "CurrentAcademicYear": 2023
   },
   {
-    "Customer_TRN": "110732120",
+    "Customer_TRN": 110732120,
     "RegistrationNo": "SLB-RLOS-129449",
     "Registered": "YES",
     "SemesterCost": 516608.68,
@@ -70,12 +70,42 @@
     "CurrentAcademicYear": 2023
   },
   {
-    "Customer_TRN": "100291708",
-    "RegistrationNo": "SLB-RLOS-123385",
-    "Registered": "Y",
-    "SemesterCost:": 181946.18,
-    "Semester": 1,
-    "GPA": 3.79,
+    "Customer_TRN": 117324779,
+    "RegistrationNo": "SLB-RLOS-131580",
+    "Registered": "YES",
+    "SemesterCost": 105062.45,
+    "Semester": 2,
+    "GPA": 0,
+    "Product_Code": "",
+    "CurrentAcademicYear": 2023
+  },
+  {
+    "Customer_TRN": 117324779,
+    "RegistrationNo": "SLB-RLOS-131580",
+    "Registered": "YES",
+    "SemesterCost": 105062.45,
+    "Semester": 2,
+    "GPA": 0,
+    "Product_Code": "",
+    "CurrentAcademicYear": 2023
+  },
+  {
+    "Customer_TRN": 117324779,
+    "RegistrationNo": "SLB-RLOS-131580",
+    "Registered": "YES",
+    "SemesterCost": 105062.45,
+    "Semester": 2,
+    "GPA": 0,
+    "Product_Code": "",
+    "CurrentAcademicYear": 2023
+  },
+  {
+    "Customer_TRN": 117324779,
+    "RegistrationNo": "SLB-RLOS-131580",
+    "Registered": "YES",
+    "SemesterCost": 105062.45,
+    "Semester": 2,
+    "GPA": 0,
     "Product_Code": "",
     "CurrentAcademicYear": 2023
   }
