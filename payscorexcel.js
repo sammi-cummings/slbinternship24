@@ -2,10 +2,9 @@ const express = require('express');
 const payscorexcel = express();
 const fs = require('fs');
 const xlsx = require('xlsx');
-//const exceljs = require('exceljs');
 const path =  require('path');
 const PORT = 3080;
-const excelFile = path.join(__dirname, 'NCU-PAYS-COR-JUNE 19 2024 (003).xlsx'); 
+const excelFile = xlsx.readFile('NCU-PAYS-COR-JUNE 19 2024 (003).xlsx'); 
 const jsonFile  = path.join(__dirname, 'NCU-PAYS-COR-JUNE 19 2024.json');
 
 payscorexcel.use(express.json());
@@ -50,11 +49,11 @@ payscorexcel.get('/all-data', async(req,res) =>{
 });
 
 //API route to add data to Excel Workbook
-payscorexcel.post('/add-data', async(req, res) => {
+payscorexcel.post('/add-data', (req, res) => {
      
     try{
-        const jsonnewdata = req.body;
-        if (!jsonnewdata || !Array.isArray(jsonnewdata)){
+        const newdata = req.body;
+        if (!newdata || !Array.isArray(newdata)){
             return res.status(400).send('Invalid format. Data should be in an array of objects.');
         }
         
@@ -62,25 +61,18 @@ payscorexcel.post('/add-data', async(req, res) => {
             // Read existing JSON data
             const jsonData = readJsonData();
             
-            // Add new data to JSON
-            jsonData.push(...jsonnewdata);
+            // Add new data to JSON file
+            jsonData.push(...newdata);
             writeJsonData(jsonData);
             
-            // Open existing Excel file
-            const wkbk = xlsx.readFile(excelFile);
-            await wkbk.xlsx.readFile(excelFile);
-            const wksht = wkbk.getWorksheet('PAYS MAY 30 2024 (2)');
-            
-            jsonnewdata.forEach(info => {
-                wksht.addRow(info);
-            });
-              
-            
-            await wkbk.xlsx.writeFile(excelFile);
+            // Adding data to existing file
+            var excelsheet = xlsx.utils.sheet_to_json(excelFile.Sheets['PAYS MAY 30 2024 (2)'])
+            xlsx.utils.sheet_add_json(excelsheet, newdata)
+            xlsx.writeFile(excelFile, 'NCU-PAYS-COR-JUNE 19 2024 (003).xlsx' )
             
             
             res.status(200).send('Data added successfully to the worksheet');
-    
+            
         }catch (excelerr){
             console.error(excelerr);
             res.status(500).send('Data not added to the worksheet. Try again');
@@ -91,11 +83,5 @@ payscorexcel.post('/add-data', async(req, res) => {
         res.status(404).send('Not Found')
     }
 });
-
-//payscorexcel.delete('/delete-data', async(req,res)=>{
-
-    //try{
-       // const deletedata = req.body;
-    //}
-//})
+  
 
