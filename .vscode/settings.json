@@ -1,0 +1,17 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "database": "NCU_PAYS_COR_JUNE_19_2024",
+            "username": "root",
+            "name": "SCummings-MySQL80"
+        }
+    ]
+}
