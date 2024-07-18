@@ -25,6 +25,7 @@
     "express": "^4.19.2",
     "json2xls": "^0.1.2",
     "mysql": "github:mysqljs/mysql",
+    "mysql2": "^3.10.3",
     "xlsx": "^0.18.5"
   }
 }
