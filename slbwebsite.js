@@ -1,47 +1,47 @@
-var express = require('express')
-var slbwebsite = express()
-var slbjam = '192.168.5.129'
-var port = 9090
+const slbloginpage = document.getElementById('form')
+const uname = document.getElementById('uname')
+const pwrd = document.getElementById('pwrd')
+const rme = document.getElementById('rme')
+const fpwrd = document.getElementById('fpwrd')
+const rqstaccess = document.getElementById('fpwrd')
+const error_message = document.getElementById('error_message')
 
+slbloginpage.addEventListener('login', (e) =>{
 
-slbwebsite.use(express.json())
-slbwebsite.listen(port, slbjam, () => {
-    console.log('Server is listening on : ', 'http://' + slbjam + '/' + port)
-})
+    let ferr = []
 
-slbwebsite.get('/login', (req, res) => {
-    try {
-        res.send(`<form>
-            
-            <div class = 'imglogo'>
-            <img src = 'C:\Users\scummings\InternshipSLB -2024\slbinternship24\SLB-logo-smll.png' alt = "Students'Loan Bureau Logo">
-            </div> <br><br>
-
-            <div class - 'container' style = 'background-color: >
-            <label for = 'uname'>Username</label>
-            <input type = 'text' name = 'uname' required><br><br>
-
-            <label for = 'pwrd'>Password</label>
-            <input type = 'text' name = 'pwrd' required><br><br>
-
-            <button type = 'submit'>Login</button>
-            <button type = 'button' class = 'cancalbtn'> Cancel</button><br>
-
-            <label>
-            <input type ='checkbox' checked = "checked" name = 'remember'>Remember Me
-            </label>
-            <div>
-
-            <div class = 'container'>
-            <span class = 'pwrd'><a href ='#'> Forget password?</span>
-            </div>
-
-            </form>`)
-    } catch (slbloginerr) {
-        res.status(404).send('Page Not Found')
+    if(uname){
+        ferr = getSLBLoginErrors(uname,pwrd)
     }
+    
+    if (ferr.length > 0){
+        e.preventDefault()
+        error_message.innerText = ferr.join(". ")
+    }
+
 })
 
-slbwebsite.put('/loginsuccess', (req, res) => {
+slbloginpage.addEventListener('rqstaccess',(rae)=>{
 
 })
+
+slbloginpage.addEventListener('fpwrd', (fperr)=>{
+
+})
+
+function getSLBLoginErrors(uname,pwrd){
+    let lginerr = []
+
+    if (uname === "" || uname == null){
+        lginerr.push('Username is required')
+        uname.parentElement.classsList.add('Incorrect')
+    }
+
+    if (pwrd === "" || pwrd == null){
+        lginerr.push('Password is required')
+        uname.parentElement.classsList.add('Incorrect')
+    }
+
+    return lginerr
+
+}
