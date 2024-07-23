@@ -53,8 +53,8 @@ h1{
 
 /*SLB Logo Animation & Design Format*/
 .slblogo{
-width: 460px;
-height: 280px;
+width: 340px;
+height: 160px;
 animation: LogoZoom 1s;
 }
 
@@ -75,7 +75,7 @@ form{
     height: 24vh;
     border-radius: 20px 20px 20px 20px;
     justify-content: center;
-    animation: LoginZoom 2s;
+    animation: LoginZoom 1s;
 }
 
 /*Form Label Design Format*/
@@ -132,6 +132,7 @@ form button{
     text-transform: capitalize;
     cursor: pointer;
     border-radius: 500px;
+    animation: LoginZoom 1s;
 }
 
 /*Form button: Hover Design Format*/
