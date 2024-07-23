@@ -1,6 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+/*Fonts imported from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Timmana&family=Vidaloka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+/*Animation for Login Container*/
+@keyframes LoginZoom{
+    0%{transform: scale(0,0);}
+    50%{transform:scale(1.2,1.2);}
+    100%{transform: scale(1,1)}
+}
 
+/*Animation for SLB Logo*/
+@keyframes LogoZoom{
+    from{transform: scale(0,0)}
+    to{transform:scale(1,1)}
+}
+
+/*Colour scheme for Login Page*/
 :root{
     --accent-color: #392571;
     --base-color: #0F856C;
@@ -8,105 +23,118 @@
     --input-color: #000000;
 }
 
+/*Alignment*/
 *{
     margin: 0;
     padding: 0;
 }
 
+/*Used Fonts*/
 html{
-    font-family: Cabin, sans-serif, Georgia;
-    font-size: 12pt;
+    font-family: Rubik, Outfit;
     color: var(--text-color);
     text-align: center;
 }
 
+/*Body Design Layout*/
 body{
     min-height: 100vh;
     background-image: url(SLBWebsiteLoginPageBkgd.png);
     background-size: cover;
     background-position: center;
-    transition: all 2s ease-in;
 }
 
+/*Header Font Format*/
 h1{ 
-    font-size: 60pt;
+    font-size: 30pt;
     font-weight: 500;
     text-transform:uppercase;
 }
 
+/*SLB Logo Animation & Design Format*/
 .slblogo{
 width: 460px;
 height: 280px;
-justify-content: center;
+animation: LogoZoom 1s;
 }
 
+/*Form Design Layout*/
 form{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:0px;
+    gap:10px;
 }
 
+/*Login Container Design Format*/
 .logincontainer{
     background: var(--base-color);
-    border: 10px solid var(--accent-color) ;
-    width: 60vh;
-    height: 44vh;
+    border: 3px solid var(--accent-color) ;
+    width: 30vh;
+    height: 24vh;
     border-radius: 20px 20px 20px 20px;
     justify-content: center;
+    animation: LoginZoom 2s;
 }
 
+/*Form Label Design Format*/
 form label{
     justify-content: center;
     align-items: center;
     color:var(--base-color);
 } 
 
+/*Form label: Hover Design Format*/
 form label:hover{
     color: var(--accent-color);
 }
 
+/*Form Input Design Format*/
 form input{
     box-sizing: border-box;
     flex-grow: 1;
     height: 50px;
     padding: 1em;
-    border: 5px solid var(--accent-color);
+    border: 3px solid var(--accent-color);
     border-radius: 20px 20px 20px 20px;
     background-color: var()
 }
 
+/*Form input: Hover*/
 form input:hover{
-    border-color:var(--accent-color);
+    border-color:var(--input-color);
 }
 
+/*Form input: Hover Design  Format*/
 form input:focus{
     outline: none;
-    border-color: var(--text-color);
+    border-color: var(--input-color);
 }
 
+/*Form input: Placeholder Design Format*/
 form input:placeholder{
 color: var(--text-color);
 opacity: 1;
 }
 
+/*Form button Design Format*/
 form button{
     margin-top:10px;
-    border: none;
+    border: 3px solid var(--accent-color);
     border-radius: 100px;
     justify-content: space-between;
     padding: 0.85em 4em;
-    background-color: var(--accent-color);
+    background-color: var(--base-color);
     color: var(--text-color);
-    font: Georgia;
-    font-size: 10pt;
+    font-size: 9pt;
     font-weight: 700;
     text-transform: capitalize;
     cursor: pointer;
     border-radius: 500px;
 }
 
+/*Form button: Hover Design Format*/
 form button:hover{
     outline: none;
     color: var(--accent-color);
