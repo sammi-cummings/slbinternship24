@@ -68,42 +68,37 @@ payscorexcel.get('/all-data', (req,res) =>{
     }
 })
 
-//payscorexcel.get("/add-data", (req,res) => {
-   // const newdata = req.body
-   // res.send(Enter data: ', newdata)
-//})
 
+//API Route to request data
+payscorexcel.get('/add-data', (req, res) => {
+    try{
+        res.send(`
+            <form action="/data-added" method="POST">
+            <label for="newdata">Enter data here</label><br><br>
+            <label for="newdata">TRN :</label>
+            <input type="text" Customer TRN="newdata"><br><br>
+            <label for="newdata">Registration Number :</label>
+            <input type = "text" RegistrationNo="newdata"><br><br>
+            <label for="newdata">Registered :</label>
+            <input type = "text" Registered="newdata"><br><br>
+            <label for="newdata">Semester Cost :</label>
+            <input type = "text" SemesterCost="newdata"><br><br>
+            <label for="newdata">Semester :</label>
+            <input type = "text" Semester="newdata"><br><br>
+            <label for="newdata">GPA :</label>
+            <input type = "text" GPA="newdata"><br><br>
+            <label for="newdata">Product Code :</label>
+            <input type = "text" Product_Code="newdata"><br><br>
+            <label for="newdata">Current Academic Year :</label>
+            <input type = "text" CurrentAcademicYear="newdata"><br><br>
+            <button type="submit">Submit</button>
+            </form>`)
 
-//API ROUTE TO REQUEST BODY
-//payscorexcel.get('/add-data', (req, res) => {
-    //try{
-      //  res.send(`
-    //<form action="/data-added" method="POST">
-   // <label for="newdata">Enter data here</label><br><br>
-    //<label for="newdata">TRN :</label>
-   // <input type="text" Customer TRN="newdata"><br><br>
-   // <label for="newdata">Registration Number :</label>
-   // <input type = "text" RegistrationNo="newdata"><br><br>
-   // <label for="newdata">Registered :</label>
-   // <input type = "text" Registered="newdata"><br><br>
-    //<label for="newdata">Semester Cost :</label>
-    //<input type = "text" SemesterCost="newdata"><br><br>
-    //<label for="newdata">Semester :</label>
-    //<input type = "text" Semester="newdata"><br><br>
-   /// <label for="newdata">GPA :</label>
-   // <input type = "text" GPA="newdata"><br><br>
-   // <label for="newdata">Product Code :</label>
-   // <input type = "text" Product_Code="newdata"><br><br>
-    //<label for="newdata">Current Academic Year :</label>
-    //<input type = "text" CurrentAcademicYear="newdata"><br><br>
-    //<button type="submit">Submit</button>
-    //</form>`)
-
-   // }catch(adddataerr){
-  //      console.error(adddataerr)
-  ////      res.status(500).send('Data not sent. Try again')
-  //  }
-//})
+    }catch(adddataerr){
+        console.error(adddataerr)
+      res.status(500).send('Data not sent. Try again')
+    }
+})
 
 //API route to add data to Excel Workbook, JSON File and SQL
 payscorexcel.post('/data-added', (req, res) => {
