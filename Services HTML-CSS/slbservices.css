@@ -1,0 +1,94 @@
+/*Fonts imported from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Timmana&family=Vidaloka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/*Animation for Services Container*/
+@keyframes LoginZoom{
+    0%{transform: scale(0,0);}
+    50%{transform:scale(1.2,1.2);}
+    100%{transform: scale(1,1)}
+}
+
+/*Animation for SLB Logo*/
+@keyframes LogoZoom{
+    from{transform: scale(0,0)}
+    to{transform:scale(1,1)}
+}
+
+/*Colour scheme for Services Page*/
+:root{
+    --accent-color: #392571;
+    --base-color: #0F856C;
+    --text-color: #FFFFFF;
+    --input-color: #000000;
+}
+
+/*Alignment*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Used Fonts*/
+html{
+    font-family: Rubik, Outfit;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/*Body Design Layout*/
+body{
+    min-height: 100vh;
+    background-image: url(SLBWebsiteLoginPageBkgd.png);
+    background-size: cover;
+    background-position: center;
+}
+
+/*Header Font Format*/
+h1{ 
+    font-size: 45pt;
+    font-weight: 500;
+    text-transform:uppercase;
+    animation: LogoZoom 1s;
+}
+
+/*SLB Logo Animation & Design Format*/
+.slblogo{
+    width: 380px;
+    height: 200px;
+    animation: LogoZoom 1s;
+    }
+    
+/*Form Design Layout*/
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+    
+
+/*Form button Design Format*/
+form button{
+    margin-top:10px;
+    border: 3px solid var(--accent-color);
+    border-radius: 100px;
+    justify-content: space-between;
+    padding: 0.85em 4em;
+    background-color: var(--base-color);
+    color: var(--text-color);
+    font-size: 18pt;
+    font-weight: 700;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: 500px;
+    animation: LoginZoom 1s;
+}
+
+/*Form button: Hover Design Format*/
+form button:hover{
+    outline: none;
+    color: var(--accent-color);
+    background-color: var(--text-color)
+}
