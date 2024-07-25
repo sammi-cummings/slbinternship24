@@ -1,0 +1,33 @@
+{
+  "name": "slbinternship24",
+  "version": "1.0.0",
+  "description": "API for a User's at Student's Loan Bureau",
+  "main": "index.js",
+  "scripts": {
+    "test": "slb24"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sammi-cummngs/slbinternship24.git"
+  },
+  "keywords": [
+    "internship24"
+  ],
+  "author": "Samuel Cummings",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sammi-cummngs/slbinternship24/issues"
+  },
+  "homepage": "https://github.com/sammi-cummngs/slbinternship24#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "document": "^0.4.7",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "gulp": "^5.0.0",
+    "json2xls": "^0.1.2",
+    "mysql": "github:mysqljs/mysql",
+    "mysql2": "^3.10.3",
+    "xlsx": "^0.18.5"
+  }
+}

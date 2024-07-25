@@ -1,0 +1,356 @@
+[
+  {
+    "RLOS": "SLB-RLOS-122218",
+    "TRN": "134211065",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+
+ {
+    "RLOS": "SLB-RLOS-132610",
+    "TRN": "130582344",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 208987.00,
+    "ATI": "Edna Manley College"
+  },
+
+ {
+    "RLOS": "SLB-RLOS-122274",
+    "TRN": "130485624",
+    "Registered Y OR N":"N",
+    "SemesterNumber": 1,
+    "SemesterCost": -,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-121287",
+    "TRN": "132773333",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-121413",
+    "TRN": "127284079",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 208987.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-120429",
+    "TRN": "132096099",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-125552",
+    "TRN": "127235078",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 208987.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-123864",
+    "TRN": "128101725",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 179673.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-123248",
+    "TRN": "130503380",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-126233",
+    "TRN": "121606244",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 208987.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-126245",
+    "TRN": "134095901",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost":  197045.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-129107",
+    "TRN": "132515164",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 179673.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-121421",
+    "TRN": "127329714",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-122703",
+    "TRN": "134185854",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 197045.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-127610",
+    "TRN": "133295419",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 197038.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-123174",
+    "TRN": "126447080",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 179673.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-125270",
+    "TRN": "132258544",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-126142",
+    "TRN": "134651383",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-121575",
+    "TRN": "134350693",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-125668",
+    "TRN": "127060600",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-128779",
+    "TRN": "118960547",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-127822",
+    "TRN": "130793060",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": SLB-RLOS-122218",
+    "TRN": "134211065",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-132610",
+    "TRN": "130582344",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 208988.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-122274",
+    "TRN": "130485624",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 1,
+    "SemesterCost": 0.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-121287",
+    "TRN": "132773333",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-121413",
+    "TRN": "127284079",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 208988.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-120429",
+    "TRN": "132096099",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-125552",
+    "TRN": "127235078",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 208988.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-123864",
+    "TRN": "128101725",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost":  179674.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-123248",
+    "TRN": "130503380",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-126233",
+    "TRN": "121606244",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 208988.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-126245",
+    "TRN": "134095901",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 197045.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-129107",
+    "TRN": "132515164",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost":  179674.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-121421",
+    "TRN": "127329714",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-122703",
+    "TRN": "134185854",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 197045.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-127610",
+    "TRN": "133295419",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 197052.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-123174",
+    "TRN": "126447080",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 179674.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-125270",
+    "TRN": "132258544",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-126142",
+    "TRN": "134651383",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-121575",
+    "TRN": "134350693",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-125668",
+    "TRN": "127060600",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-128779",
+    "TRN": "118960547",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  },
+ {
+    "RLOS": "SLB-RLOS-127822",
+    "TRN": "130793060",
+    "Registered Y OR N":"Y",
+    "SemesterNumber": 2,
+    "SemesterCost": 190588.00,
+    "ATI": "Edna Manley College"
+  }
+]
