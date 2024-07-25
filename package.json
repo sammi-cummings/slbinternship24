@@ -21,8 +21,10 @@
   "homepage": "https://github.com/sammi-cummngs/slbinternship24#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "document": "^0.4.7",
     "exceljs": "^4.4.0",
     "express": "^4.19.2",
+    "gulp": "^5.0.0",
     "json2xls": "^0.1.2",
     "mysql": "github:mysqljs/mysql",
     "mysql2": "^3.10.3",

@@ -1,4 +1,5 @@
 var express = require('express')
+var document = require('document')
 var mysql2 = require('mysql2')
 var bodyparser = require('body-parser')
 var payscorexcel = express()
@@ -45,16 +46,19 @@ const writeJsonData = (data) => {
     fs.writeFileSync(jsonFile, JSON.stringify(data, null, 2))
 }
 
-
-function jsonToSql(json) {
-    const tableName = 'PAYSMAY302024';
-    const columns = Object.keys(json).join(', ');
-    const values = Object.values(json).map(value => `'${value}'`).join(', ');
-  
-    const sql = `INSERT INTO ${tableName} (${columns}) VALUES (${values})`;
-    return sql;
-  }
-
+function convertToJson() {
+    let form = document.getElementById("datainfo");
+    let formData = {};
+    for (let i = 0; i < form.elements.length; i++) {
+        let element = form.elements[i];
+        if (element.type !== "submit") {
+            formData[element.name] = element.value;
+        }
+    }
+    let jsonData = JSON.stringify(formData);
+    let jsonOutput = document.getElementById("jsonOutput");
+    jsonOutput.innerHTML = "<pre>" + jsonData + "</pre>";
+}
 
 //API route to retrieve the data from Excel File and convert to JSON
 payscorexcel.get('/all-data', (req,res) =>{
@@ -73,18 +77,18 @@ payscorexcel.get('/all-data', (req,res) =>{
 payscorexcel.get('/add-data', (req, res) => {
     try{
         res.send(`
-            <form action="/data-added" method="POST">
+            <form id = 'datainfo' action="/data-added" method="POST">
             <label for="newdata">Enter data here</label><br><br>
             <label for="newdata">TRN :</label>
-            <input type="text" Customer TRN="newdata"><br><br>
+            <input type="text" Customer TRN = "newdata"><br><br>
             <label for="newdata">Registration Number :</label>
-            <input type = "text" RegistrationNo="newdata"><br><br>
+            <input type = "text" RegistrationNo = "newdata"><br><br>
             <label for="newdata">Registered :</label>
-            <input type = "text" Registered="newdata"><br><br>
+            <input type = "text" Registered = "newdata"><br><br>
             <label for="newdata">Semester Cost :</label>
-            <input type = "text" SemesterCost="newdata"><br><br>
+            <input type = "text" SemesterCost = "newdata"><br><br>
             <label for="newdata">Semester :</label>
-            <input type = "text" Semester="newdata"><br><br>
+            <input type = "text" Semester = "newdata"><br><br>
             <label for="newdata">GPA :</label>
             <input type = "text" GPA="newdata"><br><br>
             <label for="newdata">Product Code :</label>
@@ -92,6 +96,7 @@ payscorexcel.get('/add-data', (req, res) => {
             <label for="newdata">Current Academic Year :</label>
             <input type = "text" CurrentAcademicYear="newdata"><br><br>
             <button type="submit">Submit</button>
+            <script src = "payscorexcel.js"></script> 
             </form>`)
 
     }catch(adddataerr){
@@ -104,7 +109,7 @@ payscorexcel.get('/add-data', (req, res) => {
 payscorexcel.post('/data-added', (req, res) => {
      
     try{
-        const newdata = req.body
+        const newdata = convertToJson()
         if (!newdata || !Array.isArray(newdata)){
             return res.status(400).send('Invalid format. Data should be in an array of objects.')
         }
@@ -121,20 +126,18 @@ payscorexcel.post('/data-added', (req, res) => {
             xlsx.utils.sheet_add_json(excelFile.Sheets['PAYS MAY 30 2024 (2)'], newdata, {origin: -1, skipHeader: true})
             xlsx.writeFile(excelFile, 'NCU-PAYS-COR-JUNE 19 2024 (003).xlsx' )
             
-            con.connect(function(sqlerr){
-                if(sqlerr) throw sqlerr
-                console.log("Connected")
-                const datasql = jsonToSql(newdata)
-                con.query(datasql,(queryerr, res)=>{
-                    if(queryerr){
-                        return res.status(500).send(queryerr)
-                    }
-                })
-            })
+            //con.connect(function(sqlerr){
+               /// if(sqlerr) throw sqlerr
+                ///console.log("Connected")
+               /// const datasql = jsonToSql(newdata)
+               /// con.query(datasql,(queryerr, res)=>{
+                  //  if(queryerr){
+                  //      return res.status(500).send(queryerr)
+                  //  }
+               // })
+          //  })
 
             res.status(200).send('Data added successfully')
-
-
 
             
         }catch (exceladderr){
