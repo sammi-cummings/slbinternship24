@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "document": "^0.4.7",
+    "express": "^4.19.2",
+    "graceful-fs": "^4.2.11",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^3.0.0"
+  }
+}
