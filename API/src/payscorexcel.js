@@ -46,19 +46,19 @@ const writeJsonData = (data) => {
     fs.writeFileSync(jsonFile, JSON.stringify(data, null, 2))
 }
 
-function convertToJson() {
-    let form = document.getElementById("datainfo");
-    let formData = {};
-    for (let i = 0; i < form.elements.length; i++) {
-        let element = form.elements[i];
-        if (element.type !== "submit") {
-            formData[element.name] = element.value;
-        }
-    }
-    let jsonData = JSON.stringify(formData);
-    let jsonOutput = document.getElementById("jsonOutput");
-    jsonOutput.innerHTML = "<pre>" + jsonData + "</pre>";
+const convertToJSON = () => {
+    var object = {};
+formData.forEach(function(value, key){
+    object[key] = value;
+});
+var json = JSON.stringify(object);
+
 }
+var object = {};
+formData.forEach(function(value, key){
+    object[key] = value;
+});
+var json = JSON.stringify(object);
 
 //API route to retrieve the data from Excel File and convert to JSON
 payscorexcel.get('/all-data', (req,res) =>{
@@ -77,7 +77,7 @@ payscorexcel.get('/all-data', (req,res) =>{
 payscorexcel.get('/add-data', (req, res) => {
     try{
         res.send(`
-            <form id = 'datainfo' action="/data-added" method="POST">
+            <form  action="/data-added" method="POST">
             <label for="newdata">Enter data here</label><br><br>
             <label for="newdata">TRN :</label>
             <input type="text" Customer TRN = "newdata"><br><br>
@@ -96,7 +96,6 @@ payscorexcel.get('/add-data', (req, res) => {
             <label for="newdata">Current Academic Year :</label>
             <input type = "text" CurrentAcademicYear="newdata"><br><br>
             <button type="submit">Submit</button>
-            <script src = "payscorexcel.js"></script> 
             </form>`)
 
     }catch(adddataerr){
@@ -109,12 +108,20 @@ payscorexcel.get('/add-data', (req, res) => {
 payscorexcel.post('/data-added', (req, res) => {
      
     try{
-        const newdata = convertToJson()
-        if (!newdata || !Array.isArray(newdata)){
+        const newdata = document.querySelector('form')
+        newdata.addEventListener('submit', (se) => {
+
+            se.preventDefault()
+            const formData = new FormData(se.target)
+            const datajson = JSON.stringify(Object.fromEntries(formData))
+            
+            if (!datajson || !Array.isArray(datajson)){
             return res.status(400).send('Invalid format. Data should be in an array of objects.')
-        }
+            }
         
-        try {
+       
+        
+         try {
             // Read existing JSON data
             const jsonData = readJsonData()
             
@@ -144,9 +151,8 @@ payscorexcel.post('/data-added', (req, res) => {
             console.error(exceladderr)
             res.status(500).send('Data not added. Try again')
         }
-
-
-
+        })
+        
     } catch(posterr){
         console.error(posterr)
         res.status(404).send('Page Not Found')
